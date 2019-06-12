@@ -8,22 +8,38 @@
         andorid:layout_width="match_parent"
         andorid:layout_height="match_parent"
         andorid:scaleType="centerCrop"/>
-    <ScrollView
-        andorid:id="@+id/weather_layout"
+    <android.support.v4.widget.DrawerLayout
+        andorid:id="@+id/drawer_layout"
         andorid:layout_width="match_parent"
-        andorid:layout_height="wrap_content"
-        andorid:scrollbars="none"
-        andorid:overScrollMode="never">
-        <LinearLayout
-            andorid:orientation="vertical"
+        andorid:layout_height="match_parent">
+        <android.support.v4.widget.SwipeRefreshLayout
+            andorid:id="@+id/swipe_refresh"
             andorid:layout_width="match_parent"
-            andorid:layout_height="wrap_content"
-            andorid:fitsSystemWindows="true">
-            <include layout="@layout/title"/>
-            <include layout="@layout/now"/>
-            <include layout="@layout/forecast"/>
-            <include layout="@layout/aqi"/>
-            <include layout="@layout/suggestion"/>
-        </LinearLayout>
-    </ScrollView>
+            andorid:layout_height="match_parent">
+            <ScrollView
+                andorid:id="@+id/weather_layout"
+                andorid:layout_width="match_parent"
+                andorid:layout_height="wrap_content"
+                andorid:scrollbars="none"
+                andorid:overScrollMode="never">
+                <LinearLayout
+                    andorid:orientation="vertical"
+                    andorid:layout_width="match_parent"
+                    andorid:layout_height="wrap_content"
+                    andorid:fitsSystemWindows="true">
+                    <include layout="@layout/title"/>
+                    <include layout="@layout/now"/>
+                    <include layout="@layout/forecast"/>
+                    <include layout="@layout/aqi"/>
+                    <include layout="@layout/suggestion"/>
+                </LinearLayout>
+            </ScrollView>
+        </android.support.v4.widget.SwipeRefreshLayout>
+        <fragment
+            andorid:id="@+id/choose_area_fragment"
+            andorid:name="com.hachi.sunweather.fragment.ChooseAreaFragment"
+            andorid:layout_width="match_parent"
+            andorid:layout_height="match_parent"
+            andorid:layout_gravity="start"/>
+    </android.support.v4.widget.DrawerLayout>
 </FrameLayout>
